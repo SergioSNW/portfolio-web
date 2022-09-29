@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    <link rel="stylesheet" href="build/portfolio-web.css"> <!--Link for global.css NOTE the different names for files -->
+    <link rel="stylesheet" href="https://use.typekit.net/ehs0tmp.css"> <!--Adobe Fonts Europa-->
+    <link rel="stylesheet" href="https://unpkg.com/@blaze/css@x.x.x/dist/blaze/blaze.css">
+    <link rel="icon" type="favicon" href="/src/assets/img/favicon.png"> <!--Favicon-->
+
+    <script type="module" src="/build/portfolio-web.esm.js"></script> <!--For modern browsers-->
+    <script nomodule src="/build/portfolio-web.js"></script> <!--For older browsers(I.E:11)-->
+  </head>
+  <body>
+
+    <div class="container">
+      <button id="dark-mode-toggle" class="dark-mode-toggle">
+        <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+      </button>
+
+      <div id="top" class="row center">
+        <!--<my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>-->
+        <sn-color-h1 class="dark-mode">Under Development</sn-color-h1>
+      </div>
+
+      <div class="row center">
+        <p>
+          Junior Full Stack Web Developer currently creating amazing projects with Rub&eacute;n Madila at Ollie Ford & Co.
+        </p>
+      </div>
+
+
+
+      <div class="row center spaced">
+        <a class="c-button c-button--sn" href="#footer">Contact Me</a>
+      </div>
+
+      <div class="o-container--large o-container c-card c-card__body">
+
+        <blaze-card>
+          <blaze-card-header>
+            <h2 class="c-heading u-xlarge">
+              Hello, I'm Sergio Santamaria Nora
+              <div class="c-heading__sub">Junior Full Stack Web Developer</div>
+            </h2>
+          </blaze-card-header>
+          <blaze-card-body>
+            <p class="c-paragraph">
+              My skills include HTML, CSS, Wordpress (CMS), Stencil Web Components and Project Managing.
+            </p>
+          </blaze-card-body>
+          <blaze-card-footer>
+            <div class="c-input-group">
+              <button class="c-button c-button--block c-button--brand" href="https://sergiosn.com/about-me">About Me</button>
+              <button class="c-button c-button--block c-button--info">Case Studies</button>
+            </div>
+          </blaze-card-footer>
+        </blaze-card>
+      </div>
+
+
+    </div>
+
+
+    <div id="footer" class="o-container o-container--large u-display-flex footer u-center-block__content--vertical">
+        <p>&copy; 2022 Sergio Santamaria Nora @ Ollie Ford & Co</p>
+        <div class="verticalfix">
+          <a class="c-button c-button--social social-buttons magenta" target="_blank" href="mailto:sergio@ollieford.co.uk">Mail</a>
+          <a class="c-button c-button--social social-buttons" target="_blank" href="https://twitter.com/synssn"><sn-icon></sn-icon></a>
+          <a class="c-button c-button--social social-buttons" target="_blank" href="https://www.instagram.com/sergio_snora/?hl=en">Instagram</a>
+          <a class="c-button c-button--social social-buttons" target="_blank" href="https://www.linkedin.com/in/sergio-santamaria-nora-2b42781b3/?originalSubdomain=uk">Linkedin</a>
+        </div>
+    </div>
+      <button class="c-button c-back-to-top" href="#top">Back to top</button>
+
+
+
+
+
+  </body>
+    <script>
+      // check for saved 'darkMode' in localStorage
+      let darkMode = localStorage.getItem('darkMode');
+
+      const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+      const enableDarkMode = () => {
+        // 1. Add the class to the body
+        document.body.classList.add('darkmode');
+        // 2. Update darkMode in localStorage
+        localStorage.setItem('darkMode', 'enabled');
+      }
+
+      const disableDarkMode = () => {
+        // 1. Remove the class from the body
+        document.body.classList.remove('darkmode');
+        // 2. Update darkMode in localStorage
+        localStorage.setItem('darkMode', null);
+      }
+
+      // If the user already visited and enabled darkMode
+      // start things off with it on
+      if (darkMode === 'enabled') {
+        enableDarkMode();
+      }
+
+      // When someone clicks the button
+      darkModeToggle.addEventListener('click', () => {
+        // get their darkMode setting
+        darkMode = localStorage.getItem('darkMode');
+
+        // if it not current enabled, enable it
+        if (darkMode !== 'enabled') {
+          enableDarkMode();
+          // if it has been enabled, turn it off
+        } else {
+          disableDarkMode();
+        }
+      });
+    </script>
+    <script src="../node_modules/@fortawesome/fontawesome-free/js/all.js"></script> <!-- Font Awesome -->
+    <script src="../node_modules/@fortawesome/fontawesome-free/css/all.css"></script> <!-- Font Awesome -->
+    <script src="node_modules/@blaze/atoms/dist/blaze-atoms.js"></script>
+    <script type="module" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"></script>
+</html>
