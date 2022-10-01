@@ -130,8 +130,8 @@ p {
   margin: 0px 5px !important;
   position: relative;
   border-radius: 10px !important;
-  left: 300px;
-  bottom: 55px;
+  left: 450px;
+  bottom: 65px;
   background-color: var(--soft-navy) !important;
   color: var(--background) !important;
 }
@@ -155,6 +155,7 @@ p {
   height: 30px;
 }
 
+/*COLOR CLASSES*/
 
 .magenta {
   background-color: var(--soft-magenta) !important;
@@ -171,6 +172,15 @@ p {
 .footer {
   background-color: var(--background);
 }
+
+.c-button.back-to-top {
+  display: inline-flex;
+  align-self: flex-start;
+  height: 2rem;
+}
+
+
+/*MEDIA QUERIES*/
 
 @media (max-width: 1800px) {
   .container {

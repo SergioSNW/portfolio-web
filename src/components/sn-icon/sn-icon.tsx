@@ -1,31 +1,31 @@
-import { Component, Host, h } from '@stencil/core';
-import twitter from './icons';
+import { Component, Host, h, Element, Prop } from '@stencil/core';
+import * as Icons from './icons/index.js';
 
 @Component({
   tag: 'sn-icon',
   styleUrl: 'sn-icon.css',
-  shadow: false,
+  shadow: true,
 })
 export class SnIcon {
 
-  svg: SVGSVGElement;
+  @Element() el: HTMLElement;
+  @Prop() icon: string = 'Twitter';
+  @Prop() viewBox: string = '0 0 248 204';
+  @Prop() appearance: string = 'light';
 
   componentWillLoad() {
-    console.log(this.svg)
+    const svgTag = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgTag.innerHTML = (this.icon in Icons) ? Icons[this.icon].path : '';
+    svgTag.setAttribute('viewBox',  (this.icon in Icons) ? Icons[this.icon].viewBox : '');
+    svgTag.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+    svgTag.classList.add(this.appearance);
+    console.log(this.appearance);
+    this.el.shadowRoot.appendChild(svgTag);
   }
-
-  connectedCallback() {
-    console.log(this.svg)
-  }
-
 
   render() {
     return (
-      <Host>
-        {this.svg}
-        <svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" viewBox="0 0 248 204" ref={el => this.svg = el as SVGSVGElement} ></svg>
-
-        </Host>
+      <Host />
     );
   }
 

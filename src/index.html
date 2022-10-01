@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="build/portfolio-web.css"> <!--Link for global.css NOTE the different names for files -->
     <link rel="stylesheet" href="https://use.typekit.net/ehs0tmp.css"> <!--Adobe Fonts Europa-->
     <link rel="stylesheet" href="https://unpkg.com/@blaze/css@x.x.x/dist/blaze/blaze.css">
-    <link rel="icon" type="favicon" href="/src/assets/img/favicon.png"> <!--Favicon-->
 
     <script type="module" src="/build/portfolio-web.esm.js"></script> <!--For modern browsers-->
     <script nomodule src="/build/portfolio-web.js"></script> <!--For older browsers(I.E:11)-->
@@ -24,13 +23,11 @@
         <sn-color-h1 class="dark-mode">Under Development</sn-color-h1>
       </div>
 
-      <div class="row center">
+      <flex-container>
         <p>
-          Junior Full Stack Web Developer currently creating amazing projects with Rub&eacute;n Madila at Ollie Ford & Co.
+          Currently creating amazing projects and learning with Rub&eacute;n Madila at Ollie Ford & Co.
         </p>
-      </div>
-
-
+      </flex-container>
 
       <div class="row center spaced">
         <a class="c-button c-button--sn" href="#footer">Contact Me</a>
@@ -66,13 +63,13 @@
     <div id="footer" class="o-container o-container--large u-display-flex footer u-center-block__content--vertical">
         <p>&copy; 2022 Sergio Santamaria Nora @ Ollie Ford & Co</p>
         <div class="verticalfix">
-          <a class="c-button c-button--social social-buttons magenta" target="_blank" href="mailto:sergio@ollieford.co.uk">Mail</a>
-          <a class="c-button c-button--social social-buttons" target="_blank" href="https://twitter.com/synssn"><sn-icon></sn-icon></a>
-          <a class="c-button c-button--social social-buttons" target="_blank" href="https://www.instagram.com/sergio_snora/?hl=en">Instagram</a>
-          <a class="c-button c-button--social social-buttons" target="_blank" href="https://www.linkedin.com/in/sergio-santamaria-nora-2b42781b3/?originalSubdomain=uk">Linkedin</a>
+          <a class="c-button c-button--social social-buttons" target="_blank" href="mailto:sergio@ollieford.co.uk"><sn-icon icon="Mail" appearance="light"></sn-icon></a>
+          <a class="c-button c-button--social social-buttons" target="_blank" href="https://twitter.com/synssn"><sn-icon icon="Twitter" appearance="light"></sn-icon></a>
+          <a class="c-button c-button--social social-buttons" target="_blank" href="https://www.instagram.com/sergio_snora/?hl=en"><sn-icon icon="Instagram" appearance="light"></sn-icon></a>
+          <a class="c-button c-button--social social-buttons" target="_blank" href="https://www.linkedin.com/in/sergio-santamaria-nora-2b42781b3/?originalSubdomain=uk"><sn-icon icon="Linkedin" appearance="light"></sn-icon></a>
         </div>
     </div>
-      <button class="c-button c-back-to-top" href="#top">Back to top</button>
+    <button class="c-button c-back-to-top back-to-top" href="#top"><sn-icon icon="UpArrow" appearance="light"></sn-icon>Back to top</button>
 
 
 
@@ -119,8 +116,6 @@
         }
       });
     </script>
-    <script src="../node_modules/@fortawesome/fontawesome-free/js/all.js"></script> <!-- Font Awesome -->
-    <script src="../node_modules/@fortawesome/fontawesome-free/css/all.css"></script> <!-- Font Awesome -->
     <script src="node_modules/@blaze/atoms/dist/blaze-atoms.js"></script>
     <script type="module" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"></script>

@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FlexContainer {
+        "isAligned": string;
+        "isCol": boolean;
+        "isJustified": string;
+        "isReverse": boolean;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -31,11 +37,20 @@ export namespace Components {
         "stop": string;
     }
     interface SnIcon {
+        "appearance": string;
+        "icon": string;
+        "viewBox": string;
     }
     interface SnSocial {
     }
 }
 declare global {
+    interface HTMLFlexContainerElement extends Components.FlexContainer, HTMLStencilElement {
+    }
+    var HTMLFlexContainerElement: {
+        prototype: HTMLFlexContainerElement;
+        new (): HTMLFlexContainerElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -73,6 +88,7 @@ declare global {
         new (): HTMLSnSocialElement;
     };
     interface HTMLElementTagNameMap {
+        "flex-container": HTMLFlexContainerElement;
         "my-component": HTMLMyComponentElement;
         "rainbow-background": HTMLRainbowBackgroundElement;
         "sn-button": HTMLSnButtonElement;
@@ -82,6 +98,12 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface FlexContainer {
+        "isAligned"?: string;
+        "isCol"?: boolean;
+        "isJustified"?: string;
+        "isReverse"?: boolean;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -107,10 +129,14 @@ declare namespace LocalJSX {
         "stop"?: string;
     }
     interface SnIcon {
+        "appearance"?: string;
+        "icon"?: string;
+        "viewBox"?: string;
     }
     interface SnSocial {
     }
     interface IntrinsicElements {
+        "flex-container": FlexContainer;
         "my-component": MyComponent;
         "rainbow-background": RainbowBackground;
         "sn-button": SnButton;
@@ -123,6 +149,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "flex-container": LocalJSX.FlexContainer & JSXBase.HTMLAttributes<HTMLFlexContainerElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "rainbow-background": LocalJSX.RainbowBackground & JSXBase.HTMLAttributes<HTMLRainbowBackgroundElement>;
             "sn-button": LocalJSX.SnButton & JSXBase.HTMLAttributes<HTMLSnButtonElement>;
