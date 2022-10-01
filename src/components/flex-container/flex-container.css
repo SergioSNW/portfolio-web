@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: var(--is-justified, center);
+  align-items: var(--is-aligned, center);
+}
+
+:host([is-col]) {
+  flex-direction: column;
+}
+
+:host([is-col][is-reverse]) {
+  flex-direction: column-reverse;
+}
+
+:host([no-gap]) {
+  gap: 0;
+}
+
+:host([full-screen]) {
+  height: 100vh;
+  width: 100vw;
+}
