@@ -1,7 +1,4 @@
 /* Linked to my index.html via the stylesheet with the project name */
-html {
-  background-color: var(--background) !important;
-}
 :root {
   --clr-light: #ffffff;
   --clr-dark: #151515;
@@ -96,6 +93,8 @@ p {
   margin: 0;
 }
 
+/*IDs*/
+
 /* Containers */
 /* Optional to add containers in global */
 /* Adding for demo Copied from Youtube */
@@ -123,21 +122,27 @@ p {
   margin-left: 10px;
 }
 
+canvas {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 0;
+}
+
+
+
 /* Social Buttons */
 .social-buttons {
   align-self: end !important;
-  justify-content: center !important;
-  margin: 0px 5px !important;
+  justify-content: end !important;
   position: relative;
   border-radius: 10px !important;
-  left: 450px;
-  bottom: 65px;
+  left: 50px;
+  bottom: 5px;
   background-color: var(--soft-navy) !important;
   color: var(--background) !important;
-}
-
-.verticalfix {
-  transform: translate(0, 100%);
 }
 
 .dark-mode-toggle {
@@ -153,6 +158,11 @@ p {
   border-radius: 5px;
   width: 30px;
   height: 30px;
+}
+
+#dark-mode-toggle {
+  height: 15px !important;
+  width: 15px !important;
 }
 
 /*COLOR CLASSES*/
@@ -177,6 +187,11 @@ p {
   display: inline-flex;
   align-self: flex-start;
   height: 2rem;
+}
+
+.aligned-start {
+  align-self: flex-start;
+  justify-self: flex-start;
 }
 
 

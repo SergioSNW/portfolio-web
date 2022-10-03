@@ -2,8 +2,16 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  margin: 20px 140px;
   justify-content: var(--is-justified, center);
   align-items: var(--is-aligned, center);
+  position: var(--is-positioned, relative);
+  /*right: 50px;*/
+
+}
+
+:host([is-reverse]) {
+  flex-direction: row-reverse;
 }
 
 :host([is-col]) {
@@ -18,7 +26,35 @@
   gap: 0;
 }
 
+:Host([full-height]) {
+  height: 100vh;
+  z-index: 10;
+}
+
 :host([full-screen]) {
   height: 100vh;
   width: 100vw;
+  z-index: 0;
+  margin: 0 !important;
 }
+
+:Host(#footer) {
+  right: 100px;
+}
+
+:Host(#footer-social) {
+  left: 100px;
+}
+
+.social-buttons {
+  align-self: end !important;
+  justify-content: end !important;
+  position: relative;
+  border-radius: 10px !important;
+  left: 150px;
+  bottom: 5px;
+  background-color: var(--soft-navy) !important;
+  color: var(--background) !important;
+}
+
+

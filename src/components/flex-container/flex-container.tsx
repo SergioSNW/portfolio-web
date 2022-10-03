@@ -13,6 +13,9 @@ export class FlexContainer {
   @Prop() isReverse: boolean = false; // normal(false) or reverse(true)
   @Prop() isAligned: string = 'center' // align-items
   @Prop() isJustified: string = 'center' // Justify-items
+  @Prop() isPositioned: string = 'relative' // relative / absolut / fixed // NOT USED
+  @Prop() size: string = 'large' // large = 64px // NOT USED
+  @Prop() gapSize: string = '1px' //
 
   @Watch('isJustified')
   watchPropHandler2(newValue: string) {
@@ -26,7 +29,11 @@ export class FlexContainer {
       .setProperty('--is-aligned', newValue);
   }
 
-
+  @Watch('gapSize')
+  watchPropHandler3(newValue: string) {
+    this.el.style
+      .setProperty('gap', newValue);
+  }
 
   render() {
     return (

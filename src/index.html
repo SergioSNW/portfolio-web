@@ -13,15 +13,68 @@
   </head>
   <body>
 
-    <div class="container">
+
+    <flex-container is-positioned="fixed" is-col="true" full-screen="true" style="background-color: red;">
+      <canvas id=c>
+
+
+        <div class="container">
+          <button id="dark-mode-toggle2" class="dark-mode-toggle">
+            <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+          </button>
+
+          <flex-container is-aligned="center">
+            <sn-color-h1>Under Development</sn-color-h1>
+          </flex-container>
+
+          <flex-container>
+            <p>
+              Currently creating amazing projects and learning with Rub&eacute;n Madila at Ollie Ford & Co.
+            </p>
+          </flex-container>
+
+          <flex-container is-aligned="center">
+            <a class="c-button c-button--sn" href="#footer">Contact Me</a>
+          </flex-container>
+
+          <div class="o-container--large o-container c-card c-card__body">
+
+            <blaze-card>
+              <blaze-card-header>
+                <h2 class="c-heading u-xlarge">
+                  Hello, I'm Sergio Santamaria Nora
+                  <div class="c-heading__sub">Junior Full Stack Web Developer</div>
+                </h2>
+              </blaze-card-header>
+              <blaze-card-body>
+                <p class="c-paragraph">
+                  My skills include HTML, CSS, Wordpress (CMS), Stencil Web Components and Project Managing.
+                </p>
+              </blaze-card-body>
+              <blaze-card-footer>
+                <div class="c-input-group">
+                  <button class="c-button c-button--block c-button--brand" href="https://sergiosn.com/about-me">About Me</button>
+                  <button class="c-button c-button--block c-button--info">Case Studies</button>
+                </div>
+              </blaze-card-footer>
+            </blaze-card>
+          </div>
+
+
+        </div>
+
+      </canvas>
+    </flex-container> <!-- End of second copy body for testing background -->
+
+
+    <flex-container is-aligned="center" is-justified="center" is-col="true" full-height="true">
       <button id="dark-mode-toggle" class="dark-mode-toggle">
         <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
       </button>
 
-      <div id="top" class="row center">
-        <!--<my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>-->
-        <sn-color-h1 class="dark-mode">Under Development</sn-color-h1>
-      </div>
+      <flex-container is-aligned="center" is-justified="center">
+        <sn-color-h1>Under Development</sn-color-h1>
+      </flex-container>
 
       <flex-container>
         <p>
@@ -29,9 +82,9 @@
         </p>
       </flex-container>
 
-      <div class="row center spaced">
+      <flex-container is-aligned="center">
         <a class="c-button c-button--sn" href="#footer">Contact Me</a>
-      </div>
+      </flex-container>
 
       <div class="o-container--large o-container c-card c-card__body">
 
@@ -56,21 +109,21 @@
         </blaze-card>
       </div>
 
+    </flex-container>
 
-    </div>
-
-
-    <div id="footer" class="o-container o-container--large u-display-flex footer u-center-block__content--vertical">
-        <p>&copy; 2022 Sergio Santamaria Nora @ Ollie Ford & Co</p>
-        <div class="verticalfix">
+      <flex-container id="footer" class="footer" is-aligned="center" is-justified="">
+        <flex-container is-justified="flex-start">
+          <p class="footer-offset">&copy; 2022 Sergio Santamaria Nora @ Ollie Ford & Co</p>
+        </flex-container>
+        <flex-container id="footer-social" is-justified="flex-end !important" gap="50px">
           <a class="c-button c-button--social social-buttons" target="_blank" href="mailto:sergio@ollieford.co.uk"><sn-icon icon="Mail" appearance="light"></sn-icon></a>
           <a class="c-button c-button--social social-buttons" target="_blank" href="https://twitter.com/synssn"><sn-icon icon="Twitter" appearance="light"></sn-icon></a>
           <a class="c-button c-button--social social-buttons" target="_blank" href="https://www.instagram.com/sergio_snora/?hl=en"><sn-icon icon="Instagram" appearance="light"></sn-icon></a>
           <a class="c-button c-button--social social-buttons" target="_blank" href="https://www.linkedin.com/in/sergio-santamaria-nora-2b42781b3/?originalSubdomain=uk"><sn-icon icon="Linkedin" appearance="light"></sn-icon></a>
-        </div>
-    </div>
-    <button class="c-button c-back-to-top back-to-top" href="#top"><sn-icon icon="UpArrow" appearance="light"></sn-icon>Back to top</button>
+        </flex-container>
+      </flex-container>
 
+     <button class="c-button c-back-to-top back-to-top" href="#top"><sn-icon icon="UpArrow" appearance="light"></sn-icon>Back to top</button>
 
 
 
@@ -116,6 +169,175 @@
         }
       });
     </script>
+    <script> // Lines Test
+      var w = c.width = window.innerWidth,
+        h = c.height = window.innerHeight,
+        ctx = c.getContext( '2d' ),
+
+        minDist = 10,
+        maxDist = 30,
+        initialWidth = 10,
+        maxLines = 100,
+        initialLines = 4,
+        speed = 5,
+
+        lines = [],
+        frame = 0,
+        timeSinceLast = 0,
+
+        dirs = [
+          // straight x, y velocity
+          [ 0, 1 ],
+          [ 1, 0 ],
+          [ 0, -1 ],
+          [ -1, 0 ],
+          // diagonals, 0.7 = sin(PI/4) = cos(PI/4)
+          [ .7, .7 ],
+          [ .7, -.7 ],
+          [ -.7, .7 ],
+          [ -.7, -.7]
+        ],
+        starter = { // starting parent line, just a pseudo line
+
+          x: w / 2,
+          y: h / 2,
+          vx: 0,
+          vy: 0,
+          width: initialWidth
+        };
+
+      function init() {
+
+        lines.length = 0;
+
+        for( var i = 0; i < initialLines; ++i )
+          lines.push( new Line( starter ) );
+
+        ctx.fillStyle = '#222';
+        ctx.fillRect( 0, 0, w, h );
+
+        // if you want a cookie ;)
+        // ctx.lineCap = 'round';
+      }
+      function getColor( x ) {
+
+        return 'hsl( hue, 80%, 50% )'.replace(
+          'hue', x / w * 360 + frame
+        );
+      }
+      function anim() {
+
+        window.requestAnimationFrame( anim );
+
+        ++frame;
+
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = 'rgba(0,0,0,.02)';
+        ctx.fillRect( 0, 0, w, h );
+        ctx.shadowBlur = .5;
+
+        for( var i = 0; i < lines.length; ++i )
+
+          if( lines[ i ].step() ) { // if true it's dead
+
+            lines.splice( i, 1 );
+            --i;
+
+          }
+
+        // spawn new
+
+        ++timeSinceLast
+
+        if( lines.length < maxLines && timeSinceLast > 10 && Math.random() < .5 ) {
+
+          timeSinceLast = 0;
+
+          lines.push( new Line( starter ) );
+
+          // cover the middle;
+          ctx.fillStyle = ctx.shadowColor = getColor( starter.x );
+          ctx.beginPath();
+          ctx.arc( starter.x, starter.y, initialWidth, 0, Math.PI * 2 );
+          ctx.fill();
+        }
+      }
+
+      function Line( parent ) {
+
+        this.x = parent.x | 0;
+        this.y = parent.y | 0;
+        this.width = parent.width / 1.25;
+
+        do {
+
+          var dir = dirs[ ( Math.random() * dirs.length ) |0 ];
+          this.vx = dir[ 0 ];
+          this.vy = dir[ 1 ];
+
+        } while (
+          ( this.vx === -parent.vx && this.vy === -parent.vy ) || ( this.vx === parent.vx && this.vy === parent.vy) );
+
+        this.vx *= speed;
+        this.vy *= speed;
+
+        this.dist = ( Math.random() * ( maxDist - minDist ) + minDist );
+
+      }
+      Line.prototype.step = function() {
+
+        var dead = false;
+
+        var prevX = this.x,
+          prevY = this.y;
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        --this.dist;
+
+        // kill if out of screen
+        if( this.x < 0 || this.x > w || this.y < 0 || this.y > h )
+          dead = true;
+
+        // make children :D
+        if( this.dist <= 0 && this.width > 1 ) {
+
+          // keep yo self, sometimes
+          this.dist = Math.random() * ( maxDist - minDist ) + minDist;
+
+          // add 2 children
+          if( lines.length < maxLines ) lines.push( new Line( this ) );
+          if( lines.length < maxLines && Math.random() < .5 ) lines.push( new Line( this ) );
+
+          // kill the poor thing
+          if( Math.random() < .2 ) dead = true;
+        }
+
+        ctx.strokeStyle = ctx.shadowColor = getColor( this.x );
+        ctx.beginPath();
+        ctx.lineWidth = this.width;
+        ctx.moveTo( this.x, this.y );
+        ctx.lineTo( prevX, prevY );
+        ctx.stroke();
+
+        if( dead ) return true
+      }
+
+      init();
+      anim();
+
+      window.addEventListener( 'resize', function() {
+
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+        starter.x = w / 2;
+        starter.y = h / 2;
+
+        init();
+      } )
+    </script>
+    <!--Other imports-->
     <script src="node_modules/@blaze/atoms/dist/blaze-atoms.js"></script>
     <script type="module" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"></script>

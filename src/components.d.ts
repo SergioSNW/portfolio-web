@@ -7,10 +7,13 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface FlexContainer {
+        "gapSize": string;
         "isAligned": string;
         "isCol": boolean;
         "isJustified": string;
+        "isPositioned": string;
         "isReverse": boolean;
+        "size": string;
     }
     interface MyComponent {
         /**
@@ -99,10 +102,13 @@ declare global {
 }
 declare namespace LocalJSX {
     interface FlexContainer {
+        "gapSize"?: string;
         "isAligned"?: string;
         "isCol"?: boolean;
         "isJustified"?: string;
+        "isPositioned"?: string;
         "isReverse"?: boolean;
+        "size"?: string;
     }
     interface MyComponent {
         /**
